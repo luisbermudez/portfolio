@@ -1,0 +1,42 @@
+.ExperienceSection h4 {
+  margin: 16px 0px;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.ExperienceSection h5 {
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 6px 0px;
+  color: var(--gray-500);
+}
+
+.ExperienceSection hr {
+  margin: 20px 0px 50px;
+  height: 1px;
+  background-image: linear-gradient(
+    to left,
+    #e7e7e7,
+    #c3c3c3,
+    #a0a0a0,
+    #7e7e7e,
+    #5e5e5e
+  );
+  border: none;
+}
+
+.ExperienceSection h2 {
+  position: relative;
+  padding-left: 44px;
+}
+
+.ExperienceSection svg {
+  font-size: 30px;
+  position: absolute;
+  top: 10px;
+  left: 0;
+}
+
+.ExperienceComponent {
+  margin-top: 30px;
+}

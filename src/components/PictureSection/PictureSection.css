@@ -1,0 +1,25 @@
+#PictureSection {
+  height: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 300px;
+}
+
+#PictureSection article {
+  position: relative;
+}
+
+#PictureSection img {
+  height: 260px;
+}
+
+#PictureSection div {
+  margin: 0px;
+  width: 263.5px;
+  height: 260px;
+  background-color: black;
+  margin-top: -252px;
+  margin-left: 14px;
+  z-index: -1;
+}

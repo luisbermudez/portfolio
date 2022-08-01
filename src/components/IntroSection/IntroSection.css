@@ -1,0 +1,19 @@
+#IntroSection {
+  margin-top: 60px;
+  min-width: 300px;
+}
+
+#IntroSection p {
+  margin: 30px 0px;
+}
+
+#IntroSection a {
+  text-decoration: none;
+  color: var(--dark-900);
+  width: fit-content;
+}
+
+#IntroSection .buttonSection {
+  display: flex;
+  flex-direction: column;
+}

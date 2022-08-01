@@ -1,0 +1,65 @@
+.Footer {
+  color: var(--light-text);
+  background-color: var(--dark-background);
+  padding: 80px 16px 50px;
+}
+
+.Footer a {
+  color: var(--light-text);
+  text-decoration: none;
+  width: fit-content;
+}
+
+#linksSection {
+  display: flex;
+}
+
+#linksSection p {
+  margin-right: 40px;
+}
+
+.Footer h1 {
+  font-size: 2.2rem;
+  line-height: 2.2rem;
+  font-weight: 800;
+}
+
+.Footer .gradientTitleTwo {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-top: 4px;
+}
+
+.Footer .nameTitle {
+  font-size: 2.4rem;
+}
+
+.emailAndPhoneComp {
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  position: relative;
+  padding-left: 30px;
+  margin-top: 10px;
+}
+
+.emailAndPhoneComp svg {
+  margin: 0px !important;
+  position: absolute;
+  left: 0;
+  color: rgb(62, 62, 62);
+}
+
+.Footer h6 {
+  color: var(--gray-500);
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-top: 24px;
+}
+
+#contactInfo {
+  margin-top: 100px;
+}
+
+#linksSection {
+  margin-top: 90px;
+}

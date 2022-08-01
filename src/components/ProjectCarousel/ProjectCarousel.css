@@ -1,0 +1,37 @@
+#ProjectCarousel {
+  height: fit-content;
+  width: 100%;
+  margin: 40px 0px;
+  position: relative;
+  min-width: 300px;
+}
+
+.arrowsCarousel {
+  width: fit-content;
+  margin-left: auto;
+}
+
+.arrowsCarousel svg {
+  margin: 4px 40px 4px 0px;
+}
+
+/* Arrows */
+#ProjectCarousel .disabledArrow {
+  color: rgb(185, 185, 185);
+}
+
+/* Carousel Cards
+___________________ */
+/* Images
+__________ */
+.carouselCard img {
+  width: 100%;
+}
+
+.carouselCard div {
+  margin: 0px 0px 30px 30px;
+}
+
+#ProjectCarousel .SecondaryButton {
+  margin-top: 20px;
+}

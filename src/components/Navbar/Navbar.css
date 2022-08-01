@@ -1,0 +1,36 @@
+.Navbar .SecondaryButton,
+.navbarDrawerBox .SecondaryButton,
+#ProjectCarousel .SecondaryButton {
+  background-color: transparent;
+  margin: 0px;
+}
+
+.Navbar .SecondaryButton button,
+.navbarDrawerBox .SecondaryButton button,
+#ProjectCarousel .SecondaryButton button {
+  margin: 0px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.Navbar .SecondaryButton svg,
+.navbarDrawerBox .SecondaryButton svg {
+  height: 16px;
+}
+
+.Navbar a,
+.navbarDrawerBox a {
+  color: var(--dark-900);
+  text-decoration: none;
+}
+
+.navbarDrawerBox a:hover .SecondaryButton svg,
+.Navbar a:hover .SecondaryButton svg {
+  right: -8px;
+  transition: right 0.18s ease-in;
+}
+
+.Navbar a:focus-visible,
+.navbarDrawerBox a:focus-visible {
+  outline: none;
+}

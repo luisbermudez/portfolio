@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=BhuTuka+Expanded+One&display=swap");
+
+:root {
+  --dark-background: rgb(4, 4, 4);
+  --dark-900: #1f1f1f;
+  --dark-800: #303030;
+  --gray-700: #5a5a5a;
+  --gray-500: #848484;
+  --light-text: rgb(250, 250, 250);
+}
+
+* {
+  font-family: "Lato", sans-serif;
+  margin: 0px;
+}
+
+::-moz-selection {
+  background-color: #f17fed58;
+}
+
+::selection {
+  background-color: #f17fed58;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  color: var(--dark-800);
+}
+
+/* Primary Button
+___________________ */
+.PrimaryButton {
+  width: 188px;
+  height: 68px;
+  position: relative;
+  display: inline-block;
+}
+
+.PrimaryButton button,
+.SecondaryButton button {
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background-color: var(--dark-background);
+  color: var(--light-text);
+  width: 180px;
+  height: 60px;
+  transition: margin 0.28s ease-out;
+}
+
+.PrimaryButton div {
+  background-image: linear-gradient(
+    to right,
+    #40e2af,
+    #00d7bc,
+    #00ccc5,
+    #00c0ca,
+    #00b3ca,
+    #00afd5,
+    #00aade,
+    #2ca4e4,
+    #59a1f6,
+    #8d9bff,
+    #c18ffd,
+    #f17fed
+  );
+  width: 180px;
+  height: 60px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.PrimaryButton button:hover {
+  cursor: pointer;
+  margin: 8px 0px 0px 8px;
+  transition: margin 0.18s ease-in;
+}
+
+@keyframes primaryButtonAnimation {
+  from {
+    margin: 0px;
+  }
+
+  to {
+    margin: 8px 0px 0px 8px;
+  }
+}
+
+.PrimaryButton button:focus-visible {
+  outline: none;
+  animation-duration: 0.95s;
+  animation-name: primaryButtonAnimation;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+/* Secondary Button
+_____________________ */
+.SecondaryButton {
+  background-color: transparent;
+  width: fit-content;
+  display: inline-block;
+  margin: 24px 0px;
+  position: relative;
+}
+
+.SecondaryButton button {
+  background-color: transparent;
+  padding-left: 0px;
+  padding-right: 28px;
+  color: var(--dark-900);
+  width: fit-content;
+  height: fit-content;
+  z-index: 2;
+}
+
+.SecondaryButton svg {
+  height: 20px;
+  position: absolute;
+  right: 0;
+  top: 2px;
+  padding-top: 1px;
+  transition: right 0.28s ease-out;
+}
+
+.SecondaryButton button:hover {
+  cursor: pointer;
+}
+
+.SecondaryButton button:hover ~ svg {
+  right: -8px;
+  transition: right 0.18s ease-in;
+}
+
+@keyframes secondaryButtonAnimation {
+  from {
+    right: 0;
+  }
+
+  to {
+    right: -8px;
+  }
+}
+.SecondaryButton button:focus-visible {
+  outline: none;
+}
+
+.SecondaryButton button:focus-visible ~ svg {
+  animation-duration: 0.65s;
+  animation-name: secondaryButtonAnimation;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+/* Gradient Title */
+/* Main gradient */
+.gradientTitleMain,
+.gradientTitleSecondary {
+  width: fit-content;
+  background-image: linear-gradient(
+    to right bottom,
+    #40e2af,
+    #00d7bc,
+    #00ccc5,
+    #00c0ca,
+    #00b3ca,
+    #0eb3ca,
+    #18b3cb,
+    #1fb3cb,
+    #25bfce,
+    #34ccd0,
+    #47d7cf,
+    #5de3ce
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Secondary Gradient */
+.gradientTitleSecondary {
+  background-image: linear-gradient(
+    to right,
+    #40e2af,
+    #00d7bc,
+    #00ccc5,
+    #00c0ca,
+    #00b3ca,
+    #00afd5,
+    #00aade,
+    #2ca4e4,
+    #59a1f6,
+    #8d9bff,
+    #c18ffd,
+    #f17fed
+  );
+}
+
+/* Title */
+/* Title 1 */
+.titleOne {
+  margin: 0px;
+  line-height: 62px;
+  font-size: 3.8rem;
+}
+
+/* Gradient Title 2 */
+.gradientTitleTwo {
+  margin: 0px;
+  font-size: 1.5rem;
+}
+
+/* Title 2 */
+.titleTwo {
+  font-weight: 800;
+  font-size: 1.9rem;
+}
+
+/* Title 3 */
+.titleThree {
+  font-weight: 900;
+  font-size: 1.4rem;
+  margin: 0px;
+  line-height: 22px;
+}
+
+/* Title 4 */
+.titleFour {
+  margin: 18px 0px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+/* Sections spacing */
+#ProjectsSection,
+.ExperienceSection,
+.Footer {
+  margin-top: 120px;
+}
