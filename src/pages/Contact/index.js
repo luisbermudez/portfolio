@@ -7,6 +7,10 @@ import { createTheme, ThemeProvider, TextField, Box } from "@mui/material";
 import PrimaryButton from "../../components/PrimaryButton";
 import { send } from "emailjs-com";
 
+const SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+const USER_ID = process.env.REACT_APP_EMAILJS_USER_ID;
+
 const theme = createTheme({
   typography: {
     fontFamily: "Lato, sans-serif",
@@ -80,7 +84,7 @@ class Contact extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    send("service_711yrvf", "template_rk8zf59", this.state, "xBc0-KiO96Nl69o3W")
+    send(SERVICE_ID, TEMPLATE_ID, this.state, USER_ID)
       .then((res) => {
         this.setState({
           name: "",
