@@ -1,12 +1,17 @@
 import "./Footer.css";
 import React from "react";
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Typography } from "@mui/material";
 import $ from "jquery";
 
 function Footer() {
+  const { pathname } = useLocation();
   const links = [
+    {
+      title: "About",
+      path: "/",
+    },
     {
       title: "Projects",
       path: "/projects",
@@ -16,6 +21,16 @@ function Footer() {
       path: "/contact",
     },
   ];
+
+  const handleTopScroll = (linkPath) => {
+    const container = $("html, body");
+    if (pathname === linkPath) {
+      container.animate({ scrollTop: 0 }, "slow");
+      return false;
+    } else {
+      container.scrollTop(0);
+    }
+  };
 
   return (
     <div className="Footer">
@@ -30,20 +45,8 @@ function Footer() {
         </h5>
       </article>
       <article id="linksSection">
-        <Typography>
-          <Link
-            tabIndex="-1"
-            to="/"
-            onClick={() => {
-              $("html, body").animate({ scrollTop: 0 }, "slow");
-              return false;
-            }}
-          >
-            About
-          </Link>
-        </Typography>
         {links.map((each, index) => (
-          <Typography key={index}>
+          <Typography key={index} onClick={() => handleTopScroll(each.path)}>
             <Link tabIndex="-1" to={each.path}>
               {each.title}
             </Link>

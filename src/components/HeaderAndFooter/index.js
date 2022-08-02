@@ -1,10 +1,11 @@
+import "./HeaderAndFooter.css";
 import { Navbar, Footer } from "..";
 
 function HeaderAndFooter(props) {
   return (
-    <div className="Contact">
+    <div className="HeaderAndFooter">
       <Navbar />
-      {props.children}
+      <div className="container">{props.children}</div>
       <Footer />
     </div>
   );

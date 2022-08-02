@@ -113,7 +113,7 @@ class ProjectCarousel extends React.Component {
               }}
               className="carouselCard"
             >
-              <img src={each.projectImage} />
+              <img alt={each.projectTitle} src={each.projectImage} />
               <div>
                 <h4 className="titleFour gradientTitleSecondary">
                   {each.projectType}

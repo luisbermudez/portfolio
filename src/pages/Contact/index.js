@@ -3,7 +3,13 @@ import React from "react";
 import { HeaderAndFooter } from "../../components";
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
-import { createTheme, ThemeProvider, TextField, Box } from "@mui/material";
+import {
+  createTheme,
+  ThemeProvider,
+  TextField,
+  Box,
+  Alert,
+} from "@mui/material";
 import PrimaryButton from "../../components/PrimaryButton";
 import { send } from "emailjs-com";
 
@@ -27,8 +33,8 @@ const theme = createTheme({
       main: "#303030",
       contrastText: "#fff",
     },
-    focused: {
-      main: "#40e2af",
+    error: {
+      main: "#f72c5b",
       contrastText: "#fff",
     },
   },
@@ -44,6 +50,7 @@ class Contact extends React.Component {
       help: "",
       hasSubmit: false,
       messageSent: false,
+      loading: false,
     };
     this.formInfo = [
       {
@@ -78,38 +85,46 @@ class Contact extends React.Component {
   }
 
   handleChange(e, inputId) {
+    this.setState({ hasSubmit: false });
     const value = e.target.value;
-    this.setState({ ...this.state, [inputId]: value });
+    this.setState({ [inputId]: value });
   }
 
   handleSubmit(e) {
     e.preventDefault();
+    this.setState({ loading: true });
     send(SERVICE_ID, TEMPLATE_ID, this.state, USER_ID)
       .then((res) => {
-        this.setState({
-          name: "",
-          preferredPronouns: "",
-          email: "",
-          help: "",
-          hasSubmit: true,
-          messageSent: true,
-        });
+        setTimeout(() => {
+          this.setState({
+            name: "",
+            preferredPronouns: "",
+            email: "",
+            help: "",
+            hasSubmit: true,
+            messageSent: true,
+            loading: false,
+          });
+        }, 1700);
       })
       .catch((err) => {
-        this.setState({
-          name: "",
-          preferredPronouns: "",
-          email: "",
-          help: "",
-          hasSubmit: true,
-          messageSent: false,
-        });
+        setTimeout(() => {
+          this.setState({
+            name: "",
+            preferredPronouns: "",
+            email: "",
+            help: "",
+            hasSubmit: true,
+            messageSent: false,
+            loading: false,
+          });
+        }, 1700);
       });
   }
 
   render() {
     return (
-      <div id="Contact">
+      <div className="Contact">
         <HeaderAndFooter>
           <div className="information">
             <h1>Get in touch</h1>
@@ -128,10 +143,21 @@ class Contact extends React.Component {
           </div>
           <div className="emailForm">
             {this.state.hasSubmit && this.state.messageSent && (
-              <h1>Message sent!</h1>
+              <h1 className="messageSent gradientTitleSecondary">
+                Message sent!
+              </h1>
             )}
             {this.state.hasSubmit && !this.state.messageSent && (
-              <h1>Message not sent, please try again later.</h1>
+              <ThemeProvider theme={theme}>
+                <Alert
+                  severity="error"
+                  variant="filled"
+                  color="error"
+                  sx={{ color: "white", fontSize: "0.9rem" }}
+                >
+                  <strong>Message not sent - </strong> Please, try again.
+                </Alert>
+              </ThemeProvider>
             )}
             {!this.state.messageSent && (
               <ThemeProvider theme={theme}>
@@ -142,6 +168,7 @@ class Contact extends React.Component {
                 >
                   {this.formInfo.map((each, i) => (
                     <TextField
+                      disabled={this.state.loading}
                       key={i}
                       type={each.type}
                       required={each.required}
@@ -157,7 +184,13 @@ class Contact extends React.Component {
                       onChange={(e) => this.handleChange(e, each.value)}
                     />
                   ))}
-                  <PrimaryButton text="Submit" />
+                  {this.state.loading ? (
+                    <div className="loadingContainer">
+                      <div className="dotPulse"></div>
+                    </div>
+                  ) : (
+                    <PrimaryButton text="Submit" />
+                  )}
                 </Box>
               </ThemeProvider>
             )}

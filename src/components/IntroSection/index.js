@@ -16,8 +16,15 @@ class IntroSection extends React.Component {
           scelerisque nisl consectetur et.
         </p>
         <div className="buttonSection">
-          <PrimaryButton text="Get in Touch" />
-          <Link tabIndex="-1" to="/files/LBermudez_Resume2022.pdf" target="_blank" download>
+          <Link tabIndex="-1" to="/contact">
+            <PrimaryButton text="Get in Touch" />
+          </Link>
+          <Link
+            tabIndex="-1"
+            to="/files/LBermudez_Resume2022.pdf"
+            target="_blank"
+            download
+          >
             <SecondaryButton text="Download Resume" />
           </Link>
         </div>

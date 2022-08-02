@@ -7,7 +7,7 @@ class PictureSection extends React.Component {
     return (
       <div id="PictureSection">
         <article>
-          <img src={profilePic} />
+          <img alt="profile" src={profilePic} />
           <div></div>
         </article>
       </div>
