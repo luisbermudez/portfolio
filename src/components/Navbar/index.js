@@ -16,7 +16,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import Drawer from "@mui/material/Drawer";
 
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import SecondaryButton from "../SecondaryButton";
 import $ from "jquery";
 
@@ -41,7 +41,7 @@ function HideOnScroll(props) {
   );
 }
 
-function TemporaryDrawer() {
+function TemporaryDrawer({ handleTopScroll }) {
   const trigger = useScrollTrigger();
   const [drawerOpen, setDrawerOpen] = React.useState(false);
   const hasCreatedEvent = React.useRef(false);
@@ -70,7 +70,12 @@ function TemporaryDrawer() {
     >
       <List>
         {navbarOptions.map((each, i) => (
-          <Link tabIndex="-1" to={each.link} key={i}>
+          <Link
+            tabIndex="-1"
+            to={each.link}
+            key={i}
+            onClick={() => handleTopScroll(each.link)}
+          >
             <ListItem tabIndex="-1" disablePadding>
               <ListItemButton>{each.name}</ListItemButton>
             </ListItem>
@@ -127,6 +132,18 @@ function TemporaryDrawer() {
 }
 
 export default function Navbar(props) {
+  const { pathname } = useLocation();
+
+  const handleTopScroll = (linkPath) => {
+    const container = $("html, body");
+    if (pathname === linkPath) {
+      container.animate({ scrollTop: 0 }, "slow");
+    } else {
+      container.scrollTop(0);
+    }
+    return false;
+  };
+
   return (
     <React.Fragment>
       <CssBaseline />
@@ -156,12 +173,17 @@ export default function Navbar(props) {
                 fontFamily: "Lato, sans-serif",
               }}
             >
-              <Link tabIndex="-1" to="/">
+              <Link tabIndex="-1" to="/" onClick={() => handleTopScroll("/")}>
                 Luis Bermudez
               </Link>
             </Typography>
             {navbarOptions.map((each, index) => (
-              <Link tabIndex="-1" to={each.link} key={index}>
+              <Link
+                tabIndex="-1"
+                to={each.link}
+                key={index}
+                onClick={() => handleTopScroll(each.link)}
+              >
                 <MenuItem
                   sx={{
                     display: { xs: "none", sm: "none", md: "flex" },
@@ -171,7 +193,7 @@ export default function Navbar(props) {
                 </MenuItem>
               </Link>
             ))}
-            <TemporaryDrawer />
+            <TemporaryDrawer handleTopScroll={handleTopScroll} />
           </Toolbar>
         </AppBar>
       </HideOnScroll>

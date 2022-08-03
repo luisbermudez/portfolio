@@ -31,24 +31,28 @@ export const workExpInfo = [
 
 export const projectsInfo = [
   {
+    name: "platy",
     projectImage: platyCC,
     projectType: "WEB DEVELOPMENT",
     projectTitle: "Full Stack MERN Application",
     projectLink: "#",
   },
   {
+    name: "galacticChase",
     projectImage: galacticChaseCC,
     projectType: "VIDEO GAME DEVELOPMENT",
     projectTitle: "JavaScript Video Game",
     projectLink: "#",
   },
   {
+    name: "portfolioProject",
     projectImage: portfolioCC,
     projectType: "WEB DEVELOPMENT",
     projectTitle: "Front End React Application",
     projectLink: "#",
   },
   {
+    name: "myStock",
     projectImage: myStockCC,
     projectType: "WEB DEVELOPMENT",
     projectTitle: "Express & Handlebars Application",

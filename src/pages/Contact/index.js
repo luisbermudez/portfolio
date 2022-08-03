@@ -2,7 +2,8 @@ import "./Contact.css";
 import React from "react";
 import { HeaderAndFooter } from "../../components";
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
-import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import {
   createTheme,
   ThemeProvider,
@@ -82,6 +83,20 @@ class Contact extends React.Component {
         value: "help",
       },
     ];
+    this.socialMedia = [
+      {
+        platform: "GitHub",
+        link: "https://github.com/luisbermudez",
+        icon: <GitHubIcon />,
+        description: "Check out my Repos",
+      },
+      {
+        platform: "LinkedIn",
+        link: "https://www.linkedin.com/in/luis-perezbermudez/",
+        icon: <LinkedInIcon />,
+        description: "Message me on LinkedIn",
+      },
+    ];
   }
 
   handleChange(e, inputId) {
@@ -129,17 +144,27 @@ class Contact extends React.Component {
           <div className="information">
             <h1>Get in touch</h1>
             <p>
-              Fill out the form, send me an email, or give me a call and I'll
-              get back to you in 48 hours or less.
+              Fill out the form, send me an email, or visit my social media
+              profiles and I'll get back to you in 48 hours or less.
             </p>
             <h5 className="emailAndPhoneComp">
               <EmailRoundedIcon />
               lapbermudez@gmail.com
             </h5>
-            <h5 className="emailAndPhoneComp">
-              <PhoneIphoneIcon />
-              612.447.3997
-            </h5>
+            {this.socialMedia.map((each, i) => (
+              <a
+                key={i}
+                tabIndex="-1"
+                href={each.link}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <h5 className="emailAndPhoneComp">
+                  {each.icon}
+                  {each.description}
+                </h5>
+              </a>
+            ))}
           </div>
           <div className="emailForm">
             {this.state.hasSubmit && this.state.messageSent && (

@@ -1,6 +1,10 @@
+.Contact {
+  margin-top: 60px;
+}
+
 .Contact .information,
 .Contact .emailForm {
-  margin: 20px 16px;
+  margin: 0px 16px;
 }
 
 .Contact .emailForm .PrimaryButton {
@@ -10,7 +14,6 @@
 .Contact .information h1 {
   font-size: 2.5rem;
   font-weight: 800;
-  margin-top: 80px;
 }
 
 .Contact .information p {
@@ -20,6 +23,10 @@
 
 .Contact .information .emailAndPhoneComp {
   margin: 30px 0px;
+}
+
+.Contact .information a {
+  color: var(--dark-900);
 }
 
 .Contact .emailForm .loadingContainer {

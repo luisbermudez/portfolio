@@ -7,7 +7,7 @@ class ProjectDetails extends React.Component {
     return (
       <div id="ProjectDetails">
         <HeaderAndFooter>
-          <h1>ProjectDetails</h1>
+          <h1>ProjectDetail</h1>
         </HeaderAndFooter>
       </div>
     );

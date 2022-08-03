@@ -5,3 +5,4 @@ export { default as ProjectsSection } from "./ProjectsSection";
 export { default as ExperienceSection } from "./ExperienceSection";
 export { default as Footer } from "./Footer";
 export { default as HeaderAndFooter } from "./HeaderAndFooter";
+export { default as SecondaryButton } from "./SecondaryButton";
