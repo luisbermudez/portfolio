@@ -11,10 +11,7 @@ class IntroSection extends React.Component {
       <div id="IntroSection">
         <h1 className="gradientTitleMain titleOne">Web Developer</h1>
         <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel
-          scelerisque nisl consectetur et.
+          I am a certified Full Stack MERN Web Developer with a college degree in Electronics Engineering.
         </p>
         <div className="buttonSection">
           <Link
