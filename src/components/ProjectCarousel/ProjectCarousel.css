@@ -35,3 +35,7 @@ __________ */
 #ProjectCarousel .SecondaryButton {
   margin-top: 20px;
 }
+
+#ProjectCarousel .carouselCard a {
+  color: var(--dark-800);
+}

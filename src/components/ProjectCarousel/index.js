@@ -7,6 +7,7 @@ import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRound
 import $ from "jquery";
 import SecondaryButton from "../SecondaryButton";
 import { projectsInfo } from "../../utils/content";
+import { Link } from "react-router-dom";
 
 class ProjectCarousel extends React.Component {
   constructor(props) {
@@ -119,7 +120,14 @@ class ProjectCarousel extends React.Component {
                   {each.projectType}
                 </h4>
                 <h3 className="titleThree">{each.projectTitle}</h3>
-                <SecondaryButton text="View Project" />
+                <Link
+                  to={`/project/${each.nameLink}`}
+                  onClick={() => {
+                    $("html, body").scrollTop(0);
+                  }}
+                >
+                  <SecondaryButton text="View Project" />
+                </Link>
               </div>
             </Card>
           ))}

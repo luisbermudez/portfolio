@@ -38,7 +38,9 @@ export const projectsInfo = [
     projectTitle: "Full Stack MERN Application",
     projectRepoLink: "https://github.com/luisbermudez/platy-frontend",
     projectSite: "https://www.platy.lapbermudez.com/",
-    projectDescription: [
+    projectDescription:
+      "Platy is a MERN Fullstack Social-Media like site where you can find places to go rollerblading. Some of the main featureas are: Sharing videos and using a map to add and find spots.",
+    projectOverview: [
       "• Front End SPA with React & Redux",
       "• Express REST API Back End",
       "• Video file management with Cloudinary",
@@ -54,9 +56,13 @@ export const projectsInfo = [
     projectTitle: "JavaScript Video Game",
     projectRepoLink: "https://github.com/luisbermudez/Galactic-Chase",
     projectSite: "https://luisbermudez.github.io/Galactic-Chase/",
-    projectDescription: [
+    projectDescription:
+      "Galactic Chase is a JavaScript Video Game about an astronaut in his ship fighting against a UFO.",
+    projectOverview: [
       "• Object-Oriented Programming",
+      "• Conditional statements & loops",
       "• CSS Transitions & Animations",
+      "• Box model & positioning",
       "• HTML Canvas for Graphics",
       "• DOM Manipulation",
     ],
@@ -68,8 +74,9 @@ export const projectsInfo = [
     projectType: "WEB DEVELOPMENT",
     projectTitle: "Front End React Application",
     projectRepoLink: "https://github.com/luisbermudez/portfolio",
-    projectSite: "#",
-    projectDescription: [
+    projectSite: "https://github.com/luisbermudez/portfolio",
+    projectDescription: "Personal Portfolio SPA with React & React Router Dom.",
+    projectOverview: [
       "• React & React Router Dom",
       "• MUI Design CSS Framework",
       "• EmailJS",
@@ -84,7 +91,9 @@ export const projectsInfo = [
     projectTitle: "Express & Handlebars Application",
     projectRepoLink: "https://github.com/luisbermudez/MyStock",
     projectSite: "https://inventoryapp-2.herokuapp.com/",
-    projectDescription: [
+    projectDescription:
+      "MyStock is a site where you can create an inventory for your products to help you manage your stocks. To use it you need to create an account first or log in using Google. Once logged in, you can create new collections and add items to your collections.",
+    projectOverview: [
       "• Express Routing & Handlebars",
       "• Bootstrap",
       "• Google Sign-In & Express Session",

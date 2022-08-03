@@ -1,5 +1,5 @@
 import * as PATHS from "../utils/paths";
-import { Home, Contact, Projects } from "../pages";
+import { Home, Contact, Projects, ProjectDetails } from "../pages";
 
 const routes = () => {
   return [
@@ -14,6 +14,10 @@ const routes = () => {
     {
       path: PATHS.PROJECTS,
       element: <Projects />,
+    },
+    {
+      path: PATHS.PROJECTDETAILS,
+      element: <ProjectDetails />,
     },
   ];
 };

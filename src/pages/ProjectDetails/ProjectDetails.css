@@ -1,0 +1,30 @@
+.ProjectDetails {
+  margin-top: 60px;
+}
+
+.ProjectDetails .projectContainer {
+  margin: 0px 16px;
+}
+
+.ProjectDetails .projectContainer img {
+  width: 100%;
+}
+
+.ProjectDetails .projectContainer h1 {
+  margin-bottom: 18px;
+}
+
+.ProjectDetails .projectContainer p {
+  margin: 20px 0;
+  text-align: justify;
+  font-weight: 300;
+  color: black;
+}
+
+.ProjectDetails .projectContainer a {
+  color: black;
+}
+
+.ProjectDetails .projectContainer article {
+  margin: 20px 0 30px;
+}

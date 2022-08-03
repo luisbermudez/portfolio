@@ -2,6 +2,8 @@ import "./Projects.css";
 import React from "react";
 import { HeaderAndFooter, SecondaryButton } from "../../components";
 import { projectsInfo } from "../../utils/content";
+import { Link } from "react-router-dom";
+import $ from "jquery";
 
 class Projects extends React.Component {
   render() {
@@ -21,11 +23,18 @@ class Projects extends React.Component {
                   </h4>
                   <h3 className="titleThree">{each.projectTitle}</h3>
                   <article>
-                    {each.projectDescription.map((parag, i) => (
-                      <p key={i}>{parag}</p>
+                    {each.projectOverview.map((parag, i) => (
+                      <ul key={i}>{parag}</ul>
                     ))}
                   </article>
-                  <SecondaryButton text="View Project" />
+                  <Link
+                    to={`/project/${each.nameLink}`}
+                    onClick={() => {
+                      $("html, body").scrollTop(0);
+                    }}
+                  >
+                    <SecondaryButton text="View Project" />
+                  </Link>
                 </section>
               </div>
             ))}
