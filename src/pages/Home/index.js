@@ -1,12 +1,10 @@
 import "./Home.css";
 import React from "react";
 import {
-  Navbar,
   IntroSection,
   PictureSection,
   ProjectsSection,
   ExperienceSection,
-  Footer,
 } from "../../components";
 import { educationInfo, workExpInfo } from "../../utils/content";
 import SchoolRoundedIcon from "@mui/icons-material/SchoolRounded";
@@ -32,7 +30,6 @@ class Home extends React.Component {
   render() {
     return (
       <div id="Home">
-        <Navbar />
         <div className="introPicSectionContainer">
           <IntroSection />
           <PictureSection />
@@ -50,7 +47,6 @@ class Home extends React.Component {
             </React.Fragment>
           ))}
         </div>
-        <Footer />
       </div>
     );
   }

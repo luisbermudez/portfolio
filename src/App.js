@@ -1,10 +1,13 @@
 import React from "react";
 import RootNavigation from "./RootNavigation";
+import HeaderAndFooter from "./components/HeaderAndFooter";
 
 function App() {
   return (
     <div className="App">
-      <RootNavigation />
+      <HeaderAndFooter>
+        <RootNavigation />
+      </HeaderAndFooter>
     </div>
   );
 }

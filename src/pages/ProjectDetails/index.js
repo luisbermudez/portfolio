@@ -1,6 +1,5 @@
 import "./ProjectDetails.css";
 import React from "react";
-import { HeaderAndFooter } from "../../components";
 import { projectsInfo } from "../../utils/content";
 import { useParams } from "react-router-dom";
 import ArrowRightRoundedIcon from "@mui/icons-material/ArrowRightRounded";
@@ -15,7 +14,6 @@ function ProjectDetails() {
 
   return (
     <div className="ProjectDetails">
-      <HeaderAndFooter>
         <div className="projectContainer">
           {project && (
             <>
@@ -56,7 +54,6 @@ function ProjectDetails() {
             </>
           )}
         </div>
-      </HeaderAndFooter>
     </div>
   );
 }

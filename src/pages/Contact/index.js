@@ -1,6 +1,5 @@
 import "./Contact.css";
 import React from "react";
-import { HeaderAndFooter } from "../../components";
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -140,7 +139,6 @@ class Contact extends React.Component {
   render() {
     return (
       <div className="Contact">
-        <HeaderAndFooter>
           <div className="information">
             <h1>Get in touch</h1>
             <p>
@@ -220,7 +218,6 @@ class Contact extends React.Component {
               </ThemeProvider>
             )}
           </div>
-        </HeaderAndFooter>
       </div>
     );
   }

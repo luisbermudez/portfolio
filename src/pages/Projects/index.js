@@ -1,6 +1,6 @@
 import "./Projects.css";
 import React from "react";
-import { HeaderAndFooter, SecondaryButton } from "../../components";
+import { SecondaryButton } from "../../components";
 import { projectsInfo } from "../../utils/content";
 import { Link } from "react-router-dom";
 import $ from "jquery";
@@ -9,7 +9,6 @@ class Projects extends React.Component {
   render() {
     return (
       <div className="Projects">
-        <HeaderAndFooter>
           <div className="cardsContainer">
             <h1>Projects</h1>
             {projectsInfo.map((each, index) => (
@@ -39,7 +38,6 @@ class Projects extends React.Component {
               </div>
             ))}
           </div>
-        </HeaderAndFooter>
       </div>
     );
   }
