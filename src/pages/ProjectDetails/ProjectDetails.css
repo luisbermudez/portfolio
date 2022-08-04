@@ -25,6 +25,10 @@
   color: black;
 }
 
+.ProjectDetails .projectContainer h3 {
+  margin: 10px 0px;
+}
+
 .ProjectDetails .projectContainer article {
   margin: 20px 0 30px;
 }

@@ -201,7 +201,7 @@ class Contact extends React.Component {
                       label={each.placeholder}
                       variant="outlined"
                       fullWidth={true}
-                      sx={{ margin: "12px 0" }}
+                      sx={{ margin: "12px 0", caretColor: "black" }}
                       multiline={each.multiline}
                       rows={4}
                       color="neutral"

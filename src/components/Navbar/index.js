@@ -74,7 +74,10 @@ function TemporaryDrawer({ handleTopScroll }) {
             tabIndex="-1"
             to={each.link}
             key={i}
-            onClick={() => handleTopScroll(each.link)}
+            onClick={() => {
+              handleTopScroll(each.link);
+              setDrawerOpen(false);
+            }}
           >
             <ListItem tabIndex="-1" disablePadding>
               <ListItemButton>{each.name}</ListItemButton>

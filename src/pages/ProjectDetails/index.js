@@ -35,22 +35,23 @@ function ProjectDetails() {
                     <ul key={i}>{parag}</ul>
                   ))}
                 </article>
-                <a
-                  href={project.projectRepoLink}
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  <h3>
-                    <ArrowRightRoundedIcon />
-                    Check out the remote repository
+                {[
+                  {
+                    link: project.projectRepoLink,
+                    title: "Check out the Remote Repository",
+                  },
+                  {
+                    link: project.projectSite,
+                    title: "Visit Website",
+                  },
+                ].map((e, i) => (
+                  <h3 key={i}>
+                    <a href={e.link} rel="noreferrer" target="_blank">
+                      <ArrowRightRoundedIcon />
+                      {e.title}
+                    </a>
                   </h3>
-                </a>
-                <a href={project.projectSite} rel="noreferrer" target="_blank">
-                  <h3>
-                    <ArrowRightRoundedIcon />
-                    Visit site
-                  </h3>
-                </a>
+                ))}
               </section>
             </>
           )}
