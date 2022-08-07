@@ -24,12 +24,27 @@ class ProjectCarousel extends React.Component {
 
   handleArrowState() {
     const cardWidth = $(".carouselCard")[0].offsetWidth;
+    const carouselActualWidth = $("#Carousel")[0].offsetWidth;
     const cardMargin = 40;
-    const carouselWidth =
-      (cardWidth + cardMargin) * (this.state.carouselItems - 1);
+    const containerPadding = 32;
     const carousel = this.carousel.current;
+    const carouselCalcWidth =
+      (this.state.carouselItems - carouselActualWidth / cardWidth) *
+        (cardWidth + cardMargin) -
+      containerPadding;
+    const totalItemsWidth =
+      cardWidth * this.state.carouselItems +
+      (cardMargin + this.state.carouselItems - 1);
 
     const handleScrollOffset = () => {
+      if (carouselActualWidth === totalItemsWidth) {
+        this.setState({
+          isLeftActive: false,
+          isRightActive: false,
+        });
+        return;
+      }
+
       if (carousel.scrollLeft === 0) {
         this.setState({
           isLeftActive: false,
@@ -40,7 +55,7 @@ class ProjectCarousel extends React.Component {
         });
       }
 
-      if (carousel.scrollLeft >= carouselWidth) {
+      if (carousel.scrollLeft >= carouselCalcWidth) {
         this.setState({
           isRightActive: false,
         });
@@ -80,7 +95,7 @@ class ProjectCarousel extends React.Component {
       this.handleArrowState();
     });
 
-    $("#Carousel").on("resize", () => {
+    $(window).on("resize", () => {
       clearTimeout(window.resizeFinished);
       window.resizeFinished = setTimeout(() => {
         this.handleArrowState();
@@ -110,7 +125,6 @@ class ProjectCarousel extends React.Component {
                 scrollSnapAlign: "start",
                 flexShrink: "0",
                 boxShadow: "none",
-                marginRight: "40px",
               }}
               className="carouselCard"
             >

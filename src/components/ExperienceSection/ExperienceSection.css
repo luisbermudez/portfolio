@@ -1,3 +1,8 @@
+.ExperienceSection {
+  max-width: 700px;
+  margin: 120px auto 0;
+}
+
 .ExperienceSection h4 {
   margin: 16px 0px;
   font-size: 1.2rem;
@@ -39,4 +44,43 @@
 
 .ExperienceComponent {
   margin-top: 30px;
+}
+
+.ExperienceComponent div:first-of-type {
+  flex: 1;
+}
+
+@media (min-width: 660px) {
+  .ExperienceComponent {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .ExperienceComponent div:last-of-type {
+    text-align: end;
+    margin-right: 60px;
+  }
+}
+
+@media (min-width: 990px) {
+  .ExperienceComponent {
+    flex-direction: column;
+  }
+
+  .ExperienceComponent div:last-of-type {
+    text-align: start;
+    margin-right: 0;
+  }
+
+  .ExperienceSection {
+    flex: 1;
+  }
+
+  .ExperienceSection:first-of-type {
+    margin-right: 20px;
+  }
+
+  .ExperienceSection:last-of-type {
+    margin-left: 20px;
+  }
 }

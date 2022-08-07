@@ -74,12 +74,9 @@ function TemporaryDrawer({ handleTopScroll }) {
             tabIndex="-1"
             to={each.link}
             key={i}
-            onClick={() => {
-              setDrawerOpen(false);
-              handleTopScroll(each.link);
-            }}
+            onClick={() => handleTopScroll(each.link)}
           >
-            <ListItem tabIndex="-1" disablePadding>
+            <ListItem tabIndex="-1" disablePadding className="drawerLinks">
               <ListItemButton>{each.name}</ListItemButton>
             </ListItem>
           </Link>
@@ -157,7 +154,6 @@ export default function Navbar(props) {
             boxShadow: "none",
             color: "black",
             zIndex: 1201,
-            maxWidth: "1200px",
             minWidth: "300px",
             margin: "0px auto",
             right: 0,
@@ -172,8 +168,9 @@ export default function Navbar(props) {
               sx={{
                 flexGrow: 1,
                 fontWeight: "700",
-                fontSize: "1.8rem",
+                fontSize: { xs: "1.8rem", sm: "2.2rem" },
                 fontFamily: "Lato, sans-serif",
+                margin: { xs: "0", sm: "1rem 0" },
               }}
             >
               <Link tabIndex="-1" to="/" onClick={() => handleTopScroll("/")}>
@@ -190,6 +187,9 @@ export default function Navbar(props) {
                 <MenuItem
                   sx={{
                     display: { xs: "none", sm: "none", md: "flex" },
+                    fontSize: "1.1rem",
+                    fontWeight: "600",
+                    fontFamily: "Lato, sans-serif",
                   }}
                 >
                   {each.name}

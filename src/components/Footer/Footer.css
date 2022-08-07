@@ -4,6 +4,11 @@
   padding: 80px 16px 50px;
 }
 
+.footerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .Footer a {
   color: var(--light-text);
   text-decoration: none;
@@ -12,10 +17,12 @@
 
 #linksSection {
   display: flex;
+  max-width: 500px;
 }
 
 #linksSection p {
-  margin-right: 40px;
+  margin-right: 60px;
+  flex: 1;
 }
 
 .Footer h1 {
@@ -43,14 +50,13 @@
 }
 
 .emailAndPhoneComp svg {
-  margin: 0px !important;
   position: absolute;
   left: 0;
   color: rgb(62, 62, 62);
 }
 
 .Footer h6 {
-  color: var(--gray-500);
+  color: rgb(98, 98, 98);
   font-size: 0.9rem;
   font-weight: 400;
   margin-top: 24px;
@@ -62,4 +68,78 @@
 
 #linksSection {
   margin-top: 90px;
+}
+
+@media (min-width: 440px) {
+  .Footer {
+    padding: 80px 32px 50px;
+  }
+
+  .Footer h1 {
+    font-size: 2.7rem;
+    line-height: 2.7rem;
+  }
+
+  .Footer .gradientTitleTwo {
+    font-size: 2.6rem;
+    margin-top: 4px;
+  }
+
+  .Footer .nameTitle {
+    font-size: 2.8rem;
+  }
+
+  .Footer h6 {
+    font-size: 1rem;
+    margin-top: 30px;
+  }
+
+  .emailAndPhoneComp {
+    margin-top: 12px;
+  }
+
+  #linksSection p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .footerContainer {
+    padding: 0 14px 0;
+  }
+}
+
+@media (min-width: 990px) {
+  .footerContainer {
+    padding: 80px 72px 0;
+  }
+
+  .Footer h1 {
+    font-size: 3.2rem;
+    line-height: 3.2rem;
+  }
+
+  .Footer .gradientTitleTwo {
+    font-size: 3.1rem;
+    margin-top: 4px;
+  }
+
+  .contactAndLinks {
+    display: flex;
+  }
+
+  .contactAndLinks #contactInfo {
+    margin-right: 100px;
+    margin-bottom: 20px;
+  }
+
+  .contactAndLinks #linksSection {
+    margin-top: 100px;
+    max-width: 700px;
+  }
+
+  .contactAndLinks #linksSection p {
+    font-size: 1.2rem;
+    margin-right: 100px;
+  }
 }

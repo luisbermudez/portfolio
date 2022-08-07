@@ -14,10 +14,11 @@ function ProjectDetails() {
 
   return (
     <div className="ProjectDetails">
-        <div className="projectContainer">
-          {project && (
-            <>
-              <h1>{project.name}</h1>
+      <div className="projectContainer">
+        {project && (
+          <>
+            <h1>{project.name}</h1>
+            <div className="projectSection">
               <section>
                 <img alt={project.projectTitle} src={project.projectImage} />
               </section>
@@ -51,9 +52,10 @@ function ProjectDetails() {
                   </h3>
                 ))}
               </section>
-            </>
-          )}
-        </div>
+            </div>
+          </>
+        )}
+      </div>
     </div>
   );
 }

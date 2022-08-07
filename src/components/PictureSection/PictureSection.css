@@ -4,6 +4,8 @@
   justify-content: center;
   align-items: center;
   min-width: 300px;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 #PictureSection article {
@@ -15,11 +17,18 @@
 }
 
 #PictureSection div {
-  margin: 0px;
+  margin: 0;
   width: 263.5px;
   height: 260px;
   background-color: black;
   margin-top: -250px;
   margin-left: 12px;
   z-index: -1;
+}
+
+@media (min-width: 990px) {
+  #PictureSection {
+    margin-top: 60px;
+    flex: 1;
+  }
 }

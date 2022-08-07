@@ -2,3 +2,31 @@
 .experienceSectionContainer {
   margin: 0px 16px;
 }
+
+.introPicSectionContainer,
+.experienceSectionContainer {
+  max-width: 1264px;
+}
+
+@media (min-width: 440px) {
+  .introPicSectionContainer,
+  .experienceSectionContainer {
+    padding: 0 18px;
+  }
+}
+
+@media (min-width: 600px) {
+  .introPicSectionContainer,
+  .experienceSectionContainer {
+    padding: 0 26px;
+  }
+}
+
+@media (min-width: 990px) {
+  .introPicSectionContainer,
+  .experienceSectionContainer {
+    display: flex;
+    margin: 0 auto;
+    padding: 0 110px;
+  }
+}

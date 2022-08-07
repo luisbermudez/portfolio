@@ -12,8 +12,20 @@
   font-size: 1rem;
   font-weight: 500;
 }
+.Navbar .SecondaryButton {
+  margin-left: 10px;
+}
 
-.Navbar .SecondaryButton svg,
+.Navbar .SecondaryButton button {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.Navbar .SecondaryButton svg {
+  height: 19px;
+  top: 4px;
+}
+
 .navbarDrawerBox .SecondaryButton svg {
   height: 16px;
 }
@@ -33,4 +45,43 @@
 .Navbar a:focus-visible,
 .navbarDrawerBox a:focus-visible {
   outline: none;
+}
+
+@media (min-width: 440px) {
+  .Navbar {
+    padding: 0 16px;
+  }
+
+  .drawerLinks {
+    padding-left: 16px;
+  }
+}
+
+@media (min-width: 600px) {
+  .drawerLinks {
+    padding-left: 24px;
+    font-size: 1.1rem;
+    margin: 4px 0;
+  }
+
+  .navbarDrawerBox .SecondaryButton button {
+    font-size: 1.1rem;
+  }
+
+  .navbarDrawerBox .SecondaryButton svg {
+    height: 20px;
+    top: 2px;
+  }
+}
+
+@media (min-width: 990px) {
+  .Navbar {
+    padding: 0 88px;
+  }
+}
+
+@media (min-width: 1262px) {
+  .Navbar {
+    padding: 0 calc(((100vw - 1094px) / 2));
+  }
 }

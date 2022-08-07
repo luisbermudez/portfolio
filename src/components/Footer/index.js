@@ -34,25 +34,32 @@ function Footer() {
 
   return (
     <div className="Footer">
-      <h1>Ready to collaborate?</h1>
-      <h2 className="gradientTitleSecondary gradientTitleTwo">Let's talk.</h2>
-      <article id="contactInfo">
-        <h1 className="nameTitle">Luis Bermudez</h1>
-        <h6>Minneapolis, MN</h6>
-        <h5 className="emailAndPhoneComp">
-          <EmailRoundedIcon />
-          lapbermudez@gmail.com
-        </h5>
-      </article>
-      <article id="linksSection">
-        {links.map((each, index) => (
-          <Typography key={index} onClick={() => handleTopScroll(each.path)}>
-            <Link tabIndex="-1" to={each.path}>
-              {each.title}
-            </Link>
-          </Typography>
-        ))}
-      </article>
+      <div className="footerContainer">
+        <h1>Ready to collaborate?</h1>
+        <h2 className="gradientTitleSecondary gradientTitleTwo">Let's talk.</h2>
+        <div className="contactAndLinks">
+          <article id="contactInfo">
+            <h1 className="nameTitle">Luis Bermudez</h1>
+            <h6>Minneapolis, MN</h6>
+            <h5 className="emailAndPhoneComp">
+              <EmailRoundedIcon />
+              lapbermudez@gmail.com
+            </h5>
+          </article>
+          <article id="linksSection">
+            {links.map((each, index) => (
+              <Typography
+                key={index}
+                onClick={() => handleTopScroll(each.path)}
+              >
+                <Link tabIndex="-1" to={each.path}>
+                  {each.title}
+                </Link>
+              </Typography>
+            ))}
+          </article>
+        </div>
+      </div>
     </div>
   );
 }

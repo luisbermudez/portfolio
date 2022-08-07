@@ -139,6 +139,7 @@ class Contact extends React.Component {
   render() {
     return (
       <div className="Contact">
+        <div className="contactContainer">
           <div className="information">
             <h1>Get in touch</h1>
             <p>
@@ -218,6 +219,7 @@ class Contact extends React.Component {
               </ThemeProvider>
             )}
           </div>
+        </div>
       </div>
     );
   }

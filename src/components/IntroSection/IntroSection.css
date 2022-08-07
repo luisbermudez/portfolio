@@ -1,6 +1,7 @@
 #IntroSection {
-  margin-top: 60px;
   min-width: 300px;
+  max-width: 700px;
+  margin: 60px auto 0;
 }
 
 #IntroSection p {
@@ -17,4 +18,25 @@
 #IntroSection .buttonSection {
   display: flex;
   flex-direction: column;
+}
+
+@media (min-width: 440px) {
+  #IntroSection .buttonSection {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 440px;
+  }
+}
+
+@media (min-width: 600px) {
+  #IntroSection p {
+    font-size: 1.1rem;
+    margin-bottom: 36px;
+  }
+}
+
+@media (min-width: 990px) {
+  #IntroSection {
+    flex: 1;
+  }
 }

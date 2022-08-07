@@ -4,10 +4,13 @@ import React from "react";
 function ExperienceComponent(props) {
   return (
     <div className="ExperienceComponent">
-      <h3 className="titleThree">{props.title}</h3>
-      <h4>{props.description}</h4>
-      <h5>{props.date}</h5>
-      <hr />
+      <div>
+        <h3 className="titleThree">{props.title}</h3>
+        <h4>{props.description}</h4>
+      </div>
+      <div>
+        <h5>{props.date}</h5>
+      </div>
     </div>
   );
 }
@@ -27,6 +30,7 @@ class ExperienceSection extends React.Component {
               description={each.description}
               date={each.date}
             />
+            <hr />
           </React.Fragment>
         ))}
       </div>
