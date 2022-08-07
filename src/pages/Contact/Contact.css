@@ -1,7 +1,10 @@
 .Contact {
-  margin: 60px 16px;
   display: flex;
   justify-content: center;
+}
+
+.Contact .contactContainer {
+  margin: 60px 16px 0;
 }
 
 .Contact .emailForm .PrimaryButton {
