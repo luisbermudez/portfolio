@@ -17,6 +17,7 @@ class ProjectCarousel extends React.Component {
     this.state = {
       carouselItems: this.projects.length,
       carouselCurrentItem: 1,
+      areArrowsActive: true,
       isRightActive: true,
       isLeftActive: false,
     };
@@ -24,75 +25,60 @@ class ProjectCarousel extends React.Component {
 
   handleArrowState() {
     const cardWidth = $(".carouselCard")[0].offsetWidth;
-    const carouselActualWidth = $("#Carousel")[0].offsetWidth;
+    const carouselViewport = $("#Carousel")[0].offsetWidth;
     const cardMargin = 40;
-    const containerPadding = 32;
     const carousel = this.carousel.current;
-    const carouselCalcWidth =
-      (this.state.carouselItems - carouselActualWidth / cardWidth) *
-        (cardWidth + cardMargin) -
-      containerPadding;
     const totalItemsWidth =
       cardWidth * this.state.carouselItems +
-      (cardMargin + this.state.carouselItems - 1);
+      cardMargin * (this.state.carouselItems - 1);
+    const maxScrollRight = totalItemsWidth - carouselViewport;
 
-    const handleScrollOffset = () => {
-      if (carouselActualWidth === totalItemsWidth) {
-        this.setState({
-          isLeftActive: false,
-          isRightActive: false,
-        });
-        return;
-      }
+    if (carouselViewport >= totalItemsWidth) {
+      this.setState({
+        isLeftActive: false,
+        isRightActive: false,
+        areArrowsActive: false,
+      });
+      return;
+    } else {
+      this.setState({
+        areArrowsActive: true,
+      });
+    }
 
-      if (carousel.scrollLeft === 0) {
-        this.setState({
-          isLeftActive: false,
-        });
-      } else {
-        this.setState({
-          isLeftActive: true,
-        });
-      }
+    if (carousel.scrollLeft === 0) {
+      this.setState({
+        isLeftActive: false,
+      });
+    } else {
+      this.setState({
+        isLeftActive: true,
+      });
+    }
 
-      if (carousel.scrollLeft >= carouselCalcWidth) {
-        this.setState({
-          isRightActive: false,
-        });
-      } else {
-        this.setState({
-          isRightActive: true,
-        });
-      }
-    };
-
-    clearTimeout(window.scrollFinished);
-    window.scrollFinished = setTimeout(() => {
-      handleScrollOffset();
-    }, 10);
+    if (carousel.scrollLeft >= maxScrollRight) {
+      this.setState({
+        isRightActive: false,
+      });
+    } else {
+      this.setState({
+        isRightActive: true,
+      });
+    }
   }
 
   handleClickScroll(scrollOffset) {
-    let count;
-    const currentItem = this.state.carouselCurrentItem;
-    const total = this.state.carouselItems;
-
-    count = scrollOffset > 0 ? currentItem + 1 : currentItem - 1;
-    if (count > total) {
-      count = total;
-    } else if (count < 1) {
-      count = 1;
-    }
-
     this.carousel.current.scrollBy(scrollOffset, 0);
-    this.setState({
-      carouselCurrentItem: count,
-    });
   }
 
   componentDidMount() {
+    this.handleArrowState();
+
     $("#Carousel").on("scroll", () => {
-      this.handleArrowState();
+      clearTimeout(window.scrolledFinished);
+      window.scrolledFinished = setTimeout(() => {
+        this.handleArrowState();
+      }, 50);
     });
 
     $(window).on("resize", () => {
@@ -146,22 +132,24 @@ class ProjectCarousel extends React.Component {
             </Card>
           ))}
         </Box>
-        <div className="arrowsCarousel">
-          {this.state.isLeftActive ? (
-            <ArrowBackIosNewRoundedIcon
-              onClick={() => this.handleClickScroll(-20)}
-            />
-          ) : (
-            <ArrowBackIosNewRoundedIcon className="disabledArrow" />
-          )}
-          {this.state.isRightActive ? (
-            <ArrowForwardIosRoundedIcon
-              onClick={() => this.handleClickScroll(20)}
-            />
-          ) : (
-            <ArrowForwardIosRoundedIcon className="disabledArrow" />
-          )}
-        </div>
+        {this.state.areArrowsActive && (
+          <div className="arrowsCarousel">
+            {this.state.isLeftActive ? (
+              <ArrowBackIosNewRoundedIcon
+                onClick={() => this.handleClickScroll(-20)}
+              />
+            ) : (
+              <ArrowBackIosNewRoundedIcon className="disabledArrow" />
+            )}
+            {this.state.isRightActive ? (
+              <ArrowForwardIosRoundedIcon
+                onClick={() => this.handleClickScroll(20)}
+              />
+            ) : (
+              <ArrowForwardIosRoundedIcon className="disabledArrow" />
+            )}
+          </div>
+        )}
       </div>
     );
   }
