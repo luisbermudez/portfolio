@@ -23,8 +23,13 @@ export const educationInfo = [
 
 export const workExpInfo = [
   {
+    title: "DePalma Studios",
+    description: "Web Developer - Contract",
+    date: "Aug 2022 - Present",
+  },
+  {
     title: "Compucom",
-    description: "Hardware & Software IT Analyst",
+    description: "Hardware & Software IT Analyst - Full Time",
     date: "Dec 2019 - Aug 2021",
   },
 ];
@@ -74,7 +79,7 @@ export const projectsInfo = [
     projectType: "WEB DEVELOPMENT",
     projectTitle: "Front End React Application",
     projectRepoLink: "https://github.com/luisbermudez/portfolio",
-    projectSite: "https://github.com/luisbermudez/portfolio",
+    projectSite: "https://www.lapbermudez.com/",
     projectDescription: "Personal Portfolio SPA with React & React Router Dom.",
     projectOverview: [
       "• React & React Router Dom",

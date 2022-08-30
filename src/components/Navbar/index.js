@@ -151,7 +151,7 @@ export default function Navbar(props) {
         <AppBar
           sx={{
             backgroundColor: "white",
-            boxShadow: "none",
+            boxShadow: "#dadadaaa 0px 1px 2px 0px",
             color: "black",
             zIndex: 1201,
             minWidth: "300px",
