@@ -9,7 +9,7 @@ class IntroSection extends React.Component {
   render() {
     return (
       <div id="IntroSection">
-        <h1 className="gradientTitleMain titleOne">Web Developer</h1>
+        <h1 className="titleOne">Web Developer</h1>
         <p>
           I am a certified Full Stack MERN Web Developer with a college degree
           in Electronics Engineering. I believe in the power of technology to
