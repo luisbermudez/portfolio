@@ -2,7 +2,6 @@ import "./Home.css";
 import React from "react";
 import {
   IntroSection,
-  PictureSection,
   ProjectsSection,
   ExperienceSection,
 } from "../../components";
@@ -32,7 +31,6 @@ class Home extends React.Component {
       <div id="Home">
         <div className="introPicSectionContainer">
           <IntroSection />
-          <PictureSection />
         </div>
 
         <ProjectsSection />
