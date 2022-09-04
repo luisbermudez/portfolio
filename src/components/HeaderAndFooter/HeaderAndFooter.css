@@ -1,3 +1,15 @@
 .HeaderAndFooter {
-  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.HeaderAndFooter .Navbar,
+.HeaderAndFooter .Footer {
+  flex: 0;
+}
+
+.HeaderAndFooter .container {
+  flex: 1;
 }

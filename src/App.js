@@ -1,3 +1,4 @@
+import "./App.css"
 import React from "react";
 import RootNavigation from "./RootNavigation";
 import HeaderAndFooter from "./components/HeaderAndFooter";

@@ -4,4 +4,8 @@
     display: flex;
     justify-content: space-between;
   }
+
+  #ProjectsSection {
+    margin-top: 160px;
+  }
 }
