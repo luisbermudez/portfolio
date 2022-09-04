@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import PrimaryButton from "../../components/PrimaryButton";
 import { send } from "emailjs-com";
+import $ from "jquery";
 
 const SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
 const TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
@@ -110,6 +111,9 @@ class Contact extends React.Component {
     send(SERVICE_ID, TEMPLATE_ID, this.state, USER_ID)
       .then((res) => {
         setTimeout(() => {
+          const container = $("html, body");
+          container.animate({ scrollTop: 0 }, 600);
+
           this.setState({
             name: "",
             preferredPronouns: "",
@@ -123,6 +127,9 @@ class Contact extends React.Component {
       })
       .catch((err) => {
         setTimeout(() => {
+          const container = $("html, body");
+          container.animate({ scrollTop: 0 }, 600);
+
           this.setState({
             name: "",
             preferredPronouns: "",
@@ -138,86 +145,88 @@ class Contact extends React.Component {
 
   render() {
     return (
-      <div className="Contact">
-        <div className="contactContainer">
-          <div className="information">
-            <h1>Get in touch</h1>
-            <p>
-              Fill out the form, send me an email, or visit my social media
-              profiles and I'll get back to you in 48 hours or less.
-            </p>
-            <h5 className="emailAndPhoneComp">
-              <EmailRoundedIcon />
-              lapbermudez@gmail.com
-            </h5>
-            {this.socialMedia.map((each, i) => (
-              <a
-                key={i}
-                tabIndex="-1"
-                href={each.link}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <h5 className="emailAndPhoneComp">
-                  {each.icon}
-                  {each.description}
-                </h5>
-              </a>
-            ))}
-          </div>
-          <div className="emailForm">
-            {this.state.hasSubmit && this.state.messageSent && (
-              <h1 className="messageSent gradientTitleSecondary">
-                Message sent!
-              </h1>
-            )}
-            {this.state.hasSubmit && !this.state.messageSent && (
-              <ThemeProvider theme={theme}>
-                <Alert
-                  severity="error"
-                  variant="filled"
-                  color="error"
-                  sx={{ color: "white", fontSize: "0.9rem" }}
+      <div className="Contact intialTopMargin generalContainer">
+        <div className="maxGrowth">
+          <div className="contactContainer">
+            <div className="information">
+              <h1>Get in touch</h1>
+              <p>
+                Fill out the form, send me an email, or visit my social media
+                profiles and I'll get back to you in 48 hours or less.
+              </p>
+              <h5 className="emailAndPhoneComp">
+                <EmailRoundedIcon />
+                lapbermudez@gmail.com
+              </h5>
+              {this.socialMedia.map((each, i) => (
+                <a
+                  key={i}
+                  tabIndex="-1"
+                  href={each.link}
+                  target="_blank"
+                  rel="noreferrer"
                 >
-                  <strong>Message not sent - </strong> Please, try again.
-                </Alert>
-              </ThemeProvider>
-            )}
-            {!this.state.messageSent && (
-              <ThemeProvider theme={theme}>
-                <Box
-                  component="form"
-                  autoComplete="off"
-                  onSubmit={(e) => this.handleSubmit(e)}
-                >
-                  {this.formInfo.map((each, i) => (
-                    <TextField
-                      disabled={this.state.loading}
-                      key={i}
-                      type={each.type}
-                      required={each.required}
-                      id="outlined-basic"
-                      label={each.placeholder}
-                      variant="outlined"
-                      fullWidth={true}
-                      sx={{ margin: "12px 0", caretColor: "black" }}
-                      multiline={each.multiline}
-                      rows={4}
-                      color="neutral"
-                      value={this.state[`${each.value}`]}
-                      onChange={(e) => this.handleChange(e, each.value)}
-                    />
-                  ))}
-                  {this.state.loading ? (
-                    <div className="loadingContainer">
-                      <div className="dotPulse"></div>
-                    </div>
-                  ) : (
-                    <PrimaryButton text="Submit" />
-                  )}
-                </Box>
-              </ThemeProvider>
-            )}
+                  <h5 className="emailAndPhoneComp">
+                    {each.icon}
+                    {each.description}
+                  </h5>
+                </a>
+              ))}
+            </div>
+            <div className="emailForm">
+              {this.state.hasSubmit && this.state.messageSent && (
+                <h1 className="messageSent gradientTitleSecondary">
+                  Message sent!
+                </h1>
+              )}
+              {this.state.hasSubmit && !this.state.messageSent && (
+                <ThemeProvider theme={theme}>
+                  <Alert
+                    severity="error"
+                    variant="filled"
+                    color="error"
+                    sx={{ color: "white", fontSize: "0.9rem" }}
+                  >
+                    <strong>Message not sent - </strong> Please, try again.
+                  </Alert>
+                </ThemeProvider>
+              )}
+              {!this.state.messageSent && (
+                <ThemeProvider theme={theme}>
+                  <Box
+                    component="form"
+                    autoComplete="off"
+                    onSubmit={(e) => this.handleSubmit(e)}
+                  >
+                    {this.formInfo.map((each, i) => (
+                      <TextField
+                        disabled={this.state.loading}
+                        key={i}
+                        type={each.type}
+                        required={each.required}
+                        id="outlined-basic"
+                        label={each.placeholder}
+                        variant="outlined"
+                        fullWidth={true}
+                        sx={{ margin: "12px 0", caretColor: "black" }}
+                        multiline={each.multiline}
+                        rows={4}
+                        color="neutral"
+                        value={this.state[`${each.value}`]}
+                        onChange={(e) => this.handleChange(e, each.value)}
+                      />
+                    ))}
+                    {this.state.loading ? (
+                      <div className="loadingContainer">
+                        <div className="dotPulse"></div>
+                      </div>
+                    ) : (
+                      <PrimaryButton text="Submit" />
+                    )}
+                  </Box>
+                </ThemeProvider>
+              )}
+            </div>
           </div>
         </div>
       </div>

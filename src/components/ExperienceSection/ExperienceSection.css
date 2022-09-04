@@ -1,6 +1,6 @@
-.ExperienceSection {
-  max-width: 700px;
-  margin: 120px auto 0;
+.ExperienceSection h2 {
+  position: relative;
+  padding-left: 44px;
 }
 
 .ExperienceSection h4 {
@@ -30,11 +30,6 @@
   border: none;
 }
 
-.ExperienceSection h2 {
-  position: relative;
-  padding-left: 44px;
-}
-
 .ExperienceSection svg {
   font-size: 30px;
   position: absolute;
@@ -58,7 +53,6 @@
 
   .ExperienceComponent div:last-of-type {
     text-align: end;
-    margin-right: 60px;
   }
 }
 

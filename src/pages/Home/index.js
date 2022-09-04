@@ -28,22 +28,26 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div id="Home">
-        <div className="introPicSectionContainer">
-          <IntroSection />
-        </div>
-
-        <ProjectsSection />
-        <div className="experienceSectionContainer">
-          {this.experienceInfo.map((each, index) => (
-            <React.Fragment key={index}>
-              <ExperienceSection
-                icon={each.icon}
-                experienceTitle={each.experienceTitle}
-                information={each.information}
-              />
-            </React.Fragment>
-          ))}
+      <div
+        id="Home"
+        className="introPicSectionContainer generalContainer intialTopMargin"
+      >
+        <div className="maxGrowth">
+          <div className="secondaryMaxGrowth">
+            <IntroSection />
+            <ProjectsSection />
+            <div className="experienceSectionContainer">
+              {this.experienceInfo.map((each, index) => (
+                <React.Fragment key={index}>
+                  <ExperienceSection
+                    icon={each.icon}
+                    experienceTitle={each.experienceTitle}
+                    information={each.information}
+                  />
+                </React.Fragment>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     );

@@ -1,9 +1,6 @@
 #ProjectCarousel {
-  height: fit-content;
   margin: 40px 0px;
   position: relative;
-  min-width: 300px;
-  max-width: 748px;
 }
 
 .arrowsCarousel {
@@ -47,24 +44,4 @@ __________ */
 
 #ProjectCarousel .carouselCard:last-of-type {
   margin-right: 0;
-}
-
-@media (min-width: 400px) {
-  #ProjectCarousel {
-    margin: 40px auto;
-  }
-}
-
-@media (min-width: 440px) {
-  #ProjectCarousel {
-    margin: 40px auto;
-    padding: 0px 24px;
-  }
-}
-
-@media (min-width: 990px) {
-  #ProjectCarousel {
-    max-width: 1230px;
-    padding: 0px 96px;
-  }
 }

@@ -18,7 +18,7 @@ function ExperienceComponent(props) {
 class ExperienceSection extends React.Component {
   render() {
     return (
-      <div className="ExperienceSection">
+      <div className="ExperienceSection primaryTopMargin">
         <h2 className="titleTwo">
           {this.props.icon}
           {this.props.experienceTitle}

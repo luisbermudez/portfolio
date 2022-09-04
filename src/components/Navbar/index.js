@@ -94,10 +94,10 @@ function TemporaryDrawer({ handleTopScroll }) {
   React.useEffect(() => {
     if (!hasCreatedEvent.current) {
       $(window).on("resize", () => {
-        clearTimeout(window.resizeFinished);
-        window.resizeFinished = setTimeout(() => {
+        clearTimeout(window.resizeFinishedNavbar);
+        window.resizeFinishedNavbar = setTimeout(() => {
           setDrawerOpen(false);
-        }, 50);
+        }, 150);
       });
 
       hasCreatedEvent.current = true;
@@ -159,45 +159,47 @@ export default function Navbar(props) {
             right: 0,
             left: 0,
           }}
-          className="Navbar"
+          className="Navbar generalContainer"
         >
-          <Toolbar>
-            <Typography
-              variant="h5"
-              component="div"
-              sx={{
-                flexGrow: 1,
-                fontWeight: "700",
-                fontSize: { xs: "1.8rem", sm: "2.2rem" },
-                fontFamily: "Lato, sans-serif",
-                margin: { xs: "0", sm: "1rem 0" },
-              }}
-            >
-              <Link tabIndex="-1" to="/" onClick={() => handleTopScroll("/")}>
-                Luis Bermudez
-              </Link>
-            </Typography>
-            {navbarOptions.map((each, index) => (
-              <Link
-                tabIndex="-1"
-                to={each.link}
-                key={index}
-                onClick={() => handleTopScroll(each.link)}
+          <div className="maxGrowth">
+            <Toolbar className="innerNav">
+              <Typography
+                variant="h5"
+                component="div"
+                sx={{
+                  flexGrow: 1,
+                  fontWeight: "700",
+                  fontSize: { xs: "1.8rem", sm: "2.2rem" },
+                  fontFamily: "Lato, sans-serif",
+                  margin: { xs: "0", sm: "1rem 0" },
+                }}
               >
-                <MenuItem
-                  sx={{
-                    display: { xs: "none", sm: "none", md: "flex" },
-                    fontSize: "1.1rem",
-                    fontWeight: "600",
-                    fontFamily: "Lato, sans-serif",
-                  }}
+                <Link tabIndex="-1" to="/" onClick={() => handleTopScroll("/")}>
+                  Luis Bermudez
+                </Link>
+              </Typography>
+              {navbarOptions.map((each, index) => (
+                <Link
+                  tabIndex="-1"
+                  to={each.link}
+                  key={index}
+                  onClick={() => handleTopScroll(each.link)}
                 >
-                  {each.name}
-                </MenuItem>
-              </Link>
-            ))}
-            <TemporaryDrawer handleTopScroll={handleTopScroll} />
-          </Toolbar>
+                  <MenuItem
+                    sx={{
+                      display: { xs: "none", sm: "none", md: "flex" },
+                      fontSize: "1.1rem",
+                      fontWeight: "600",
+                      fontFamily: "Lato, sans-serif",
+                    }}
+                  >
+                    {each.name}
+                  </MenuItem>
+                </Link>
+              ))}
+              <TemporaryDrawer handleTopScroll={handleTopScroll} />
+            </Toolbar>
+          </div>
         </AppBar>
       </HideOnScroll>
       <Toolbar />

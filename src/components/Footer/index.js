@@ -33,8 +33,8 @@ function Footer() {
   };
 
   return (
-    <div className="Footer">
-      <div className="footerContainer">
+    <div className="Footer primaryTopMargin generalContainer">
+      <div className="maxGrowth">
         <h1>Ready to collaborate?</h1>
         <h2 className="gradientTitleSecondary gradientTitleTwo">Let's talk.</h2>
         <div className="contactAndLinks">

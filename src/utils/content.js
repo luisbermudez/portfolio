@@ -29,7 +29,7 @@ export const workExpInfo = [
   },
   {
     title: "Compucom",
-    description: "Hardware & Software IT Analyst - Full Time",
+    description: "Hardware & Software IT Analyst",
     date: "Dec 2019 - Aug 2021",
   },
 ];

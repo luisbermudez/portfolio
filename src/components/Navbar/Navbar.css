@@ -1,3 +1,8 @@
+.css-hyum1k-MuiToolbar-root {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
 .Navbar .SecondaryButton,
 .navbarDrawerBox .SecondaryButton,
 #ProjectCarousel .SecondaryButton {
@@ -47,11 +52,11 @@
   outline: none;
 }
 
-@media (min-width: 440px) {
-  .Navbar {
-    padding: 0 16px;
-  }
+.drawerLinks {
+  padding-left: 1px;
+}
 
+@media (min-width: 440px) {
   .drawerLinks {
     padding-left: 16px;
   }
@@ -59,7 +64,7 @@
 
 @media (min-width: 600px) {
   .drawerLinks {
-    padding-left: 24px;
+    padding-left: 26px;
     font-size: 1.1rem;
     margin: 4px 0;
   }
@@ -71,17 +76,5 @@
   .navbarDrawerBox .SecondaryButton svg {
     height: 20px;
     top: 2px;
-  }
-}
-
-@media (min-width: 990px) {
-  .Navbar {
-    padding: 0 88px;
-  }
-}
-
-@media (min-width: 1262px) {
-  .Navbar {
-    padding: 0 calc(((100vw - 1094px) / 2));
   }
 }

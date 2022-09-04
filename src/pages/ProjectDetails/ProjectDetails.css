@@ -1,87 +1,51 @@
-.ProjectDetails {
-  margin-top: 60px;
-  display: flex;
-  justify-content: center;
-}
-
-.ProjectDetails .projectContainer {
-  margin: 0px 16px;
-  max-width: 500px;
-}
-
-.ProjectDetails .projectContainer img {
+.ProjectDetails img {
   width: 100%;
 }
 
-.ProjectDetails .projectContainer h1 {
+.ProjectDetails h1 {
   margin-bottom: 18px;
 }
 
-.ProjectDetails .projectContainer p {
+.ProjectDetails p {
   margin: 20px 0;
   text-align: justify;
   font-weight: 300;
   color: black;
 }
 
-.ProjectDetails .projectContainer a {
+.ProjectDetails a {
   color: black;
 }
 
-.ProjectDetails .projectContainer h3 {
+.ProjectDetails h3 {
   margin: 10px 0px;
 }
 
-.ProjectDetails .projectContainer article {
+.ProjectDetails article {
   margin: 20px 0 30px;
 }
 
-@media (min-width: 440px) {
-  .ProjectDetails .projectContainer {
-    margin: 0 32px;
-  }
-}
-
-@media (min-width: 600px) {
-  .ProjectDetails .projectContainer {
-    margin: 0 42px;
-  }
-}
-
 @media (min-width: 780px) {
-  .ProjectDetails .projectContainer .projectSection {
+  .ProjectDetails .projectSection {
     display: flex;
     justify-content: space-between;
   }
 
-  .ProjectDetails .projectContainer .projectSection section {
-    flex: 1;
-  }
-
-  .ProjectDetails .projectContainer .projectSection section:first-of-type {
-    margin-right: 40px;
-  }
-
-  .ProjectDetails .projectContainer {
-    max-width: 1040px;
+  .ProjectDetails .projectSection section {
+    width: 48%;
   }
 }
 
 @media (min-width: 990px) {
-  .ProjectDetails .projectContainer {
-    margin: 60px 112px 0;
-    max-width: 1040px;
+  .ProjectDetails .projectSection section {
+    width: 46%;
   }
 
-  .ProjectDetails .projectContainer .projectSection section:first-of-type {
-    margin-right: 80px;
-  }
-
-  .ProjectDetails .projectContainer .titleFour {
+  .ProjectDetails .titleFour {
     font-size: 1.2rem;
   }
 
-  .ProjectDetails .projectContainer .titleThree {
+  .ProjectDetails .titleThree {
     font-size: 1.5rem;
   }
 }

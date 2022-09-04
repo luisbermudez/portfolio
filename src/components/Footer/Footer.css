@@ -1,12 +1,8 @@
 .Footer {
   color: var(--light-text);
   background-color: var(--dark-background);
-  padding: 80px 16px 50px;
-}
-
-.footerContainer {
-  max-width: 1200px;
-  margin: 0 auto;
+  padding-top: 80px;
+  padding-bottom: 50px;
 }
 
 .Footer a {
@@ -71,10 +67,6 @@
 }
 
 @media (min-width: 440px) {
-  .Footer {
-    padding: 80px 32px 50px;
-  }
-
   .Footer h1 {
     font-size: 2.7rem;
     line-height: 2.7rem;
@@ -103,17 +95,7 @@
   }
 }
 
-@media (min-width: 600px) {
-  .footerContainer {
-    padding: 0 14px 0;
-  }
-}
-
 @media (min-width: 990px) {
-  .footerContainer {
-    padding: 80px 72px 0;
-  }
-
   .Footer h1 {
     font-size: 3.2rem;
     line-height: 3.2rem;

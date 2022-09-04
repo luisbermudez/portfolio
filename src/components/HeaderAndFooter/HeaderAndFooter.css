@@ -1,9 +1,3 @@
 .HeaderAndFooter {
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.HeaderAndFooter .container {
-  flex: 1;
 }

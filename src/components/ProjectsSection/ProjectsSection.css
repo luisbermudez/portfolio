@@ -1,35 +1,6 @@
-#ProjectsSection {
-  margin-left: 16px;
-  margin-right: 16px;
-}
-
-#ProjectsSection .titleContainer {
-  max-width: 700px;
-  margin: 40px auto;
-}
-
-@media (min-width: 440px) {
-  #ProjectsSection .titleContainer {
-    margin: 40px 16px;
-  }
-}
-
-@media (min-width: 600px) {
-  #ProjectsSection .titleContainer {
-    margin: 40px 26px;
-  }
-}
-
-@media (min-width: 785px) {
-  #ProjectsSection .titleContainer {
-    margin: 40px auto;
-  }
-}
-
 @media (min-width: 990px) {
   #ProjectsSection .titleContainer {
-    max-width: 1230px;
-    padding: 0 96px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
   }

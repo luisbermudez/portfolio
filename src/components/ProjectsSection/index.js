@@ -8,7 +8,7 @@ import $ from "jquery";
 class ProjectsSection extends React.Component {
   render() {
     return (
-      <div id="ProjectsSection">
+      <div id="ProjectsSection" className="primaryTopMargin">
         <div className="titleContainer">
           <h2 className="gradientTitleTwo gradientTitleSecondary">PROJECTS</h2>
           <Link
