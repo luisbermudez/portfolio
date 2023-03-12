@@ -7,7 +7,7 @@ export const educationInfo = [
   {
     title: "Harvard - CS50x",
     description: "Computer Science Certification",
-    date: "Apr 2022 - Present",
+    date: "Aug 2022 - Dec 2022",
   },
   {
     title: "Ironhack",
@@ -23,9 +23,14 @@ export const educationInfo = [
 
 export const workExpInfo = [
   {
+    title: "Weber State University",
+    description: "ASP.NET Full Stack Web Developer",
+    date: "Dec 2022 - Present",
+  },
+  {
     title: "DePalma Studios",
     description: "Web Developer - Contract",
-    date: "Aug 2022 - Present",
+    date: "Aug 2022 - Sep 2022",
   },
   {
     title: "Compucom",

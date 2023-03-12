@@ -9,11 +9,13 @@ class IntroSection extends React.Component {
   render() {
     return (
       <div id="IntroSection">
-        <h1 className="titleOne">Web Developer</h1>
+        <h1 className="titleOne">Web Development</h1>
         <p>
-          I am a certified Full Stack MERN Web Developer with a college degree
-          in Electronics Engineering. I believe in the power of technology to
-          help transform and improve the lives of people around the world.
+          Hi there! I am a MERN, and ASP.NET web developer. Currently
+          part of the web dev team at{" "}
+          <a href="https://www.weber.edu/" className="underlinedLink">
+            Weber State University.
+          </a>
         </p>
         <div className="buttonSection">
           <Link

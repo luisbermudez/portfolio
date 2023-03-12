@@ -12,7 +12,7 @@
 }
 
 #IntroSection a {
-  text-decoration: none;
+  text-decoration: underline;
   color: var(--dark-900);
   width: fit-content;
 }

@@ -40,7 +40,7 @@ function Footer() {
         <div className="contactAndLinks">
           <article id="contactInfo">
             <h1 className="nameTitle">Luis Bermudez</h1>
-            <h6>Minneapolis, MN</h6>
+            <h6>Salt Lake City, UT</h6>
             <h5 className="emailAndPhoneComp">
               <EmailRoundedIcon />
               lapbermudez@gmail.com
